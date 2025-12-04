@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>基础网页</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <h1>欢迎来到我的基础网页</h1>
+        <nav>
+            <ul>
+                <li><a href="#home">首页</a></li>
+                <li><a href="#about">关于</a></li>
+                <li><a href="#contact">联系</a></li>
+                <li><a href="extra_page.html">新页面</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section id="home" onclick="window.location.href='new_page.html'" style="cursor: pointer;">
+            <h2>首页</h2>
+            <p>这是一个基础网页的示例，包含HTML、CSS和JavaScript的基本使用。</p>
+            <p>你可以根据需要修改和扩展这个网页。</p>
+            <p style="color: #e8491d; font-weight: bold;">点击此区域跳转到新页面</p>
+        </section>
+
+        <section id="about">
+            <h2>关于</h2>
+            <p>这个网页展示了如何创建一个简单但功能完整的HTML页面。</p>
+            <p>它包含了标题、导航栏、主要内容区域和页脚。</p>
+        </section>
+
+        <section id="contact">
+            <h2>联系</h2>
+            <p>你可以通过以下方式联系我们：</p>
+            <ul>
+                <li>电子邮件：example@example.com</li>
+                <li>电话：123-456-7890</li>
+            </ul>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2023 基础网页示例. 保留所有权利.</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
