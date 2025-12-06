@@ -70,3 +70,9 @@ coverage/
 *.zip
 *.tar.gz
 *.rar
+
+# 忽略除.gitignore和pz_photo文件夹以外的所有文件
+*
+!.gitignore
+!pz_photo/
+!pz_photo/**/*
