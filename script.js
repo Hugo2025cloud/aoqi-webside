@@ -22,9 +22,16 @@ function smoothScroll() {
 
     navLinks.forEach(link => {
         link.addEventListener('click', function(e) {
+            const href = this.getAttribute('href');
+            
+            // 如果是外部链接或指向其他HTML文件，不阻止默认行为
+            if (href.startsWith('http') || href.startsWith('https') || href.endsWith('.html')) {
+                return;
+            }
+            
             e.preventDefault();
             
-            const targetId = this.getAttribute('href');
+            const targetId = href;
             const targetSection = document.querySelector(targetId);
             
             if (targetSection) {
