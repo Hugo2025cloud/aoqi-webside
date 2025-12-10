@@ -104,8 +104,8 @@ function initVideoToggle() {
     
     // 视频源数组
     const videoSources = [
-        'pz_photo/辉跃之力①.webm',
-        'pz_photo/辉跃之力②.webm'
+        'pz_photo/辉跃之力670.webm',
+        'pz_photo/辉跃之力550.webm'
     ];
     
     let currentIndex = 0;
