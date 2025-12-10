@@ -8,6 +8,9 @@ window.addEventListener('DOMContentLoaded', function() {
 
     // 为页面添加点击事件
     addClickEvents();
+    
+    // 初始化视频切换功能
+    initVideoToggle();
 });
 
 // 欢迎消息函数
@@ -87,3 +90,41 @@ window.addEventListener('scroll', function() {
         header.style.padding = '20px 0';
     }
 });
+
+// 视频切换功能
+function initVideoToggle() {
+    const videoElement = document.getElementById('huiyueVideo');
+    const videoSource = document.getElementById('videoSource');
+    const toggleButton = document.getElementById('toggleVideo');
+    
+    // 检查元素是否存在
+    if (!videoElement || !videoSource || !toggleButton) {
+        return;
+    }
+    
+    // 视频源数组
+    const videoSources = [
+        'pz_photo/辉跃之力①.webm',
+        'pz_photo/辉跃之力②.webm'
+    ];
+    
+    let currentIndex = 0;
+    
+    toggleButton.addEventListener('click', function() {
+        // 切换到下一个视频源
+        currentIndex = (currentIndex + 1) % videoSources.length;
+        
+        // 更新视频源
+        videoSource.src = videoSources[currentIndex];
+        
+        // 重新加载视频
+        videoElement.load();
+        
+        // 更新按钮文本
+        if (currentIndex === 0) {
+            toggleButton.innerHTML = '550辉跃之力';
+        } else {
+            toggleButton.innerHTML = '670辉跃之力';
+        }
+    });
+}
