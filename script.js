@@ -11,6 +11,8 @@ window.addEventListener('DOMContentLoaded', function() {
     
     // 初始化视频切换功能
     initVideoToggle();
+    initBaojiVideoToggle();
+    initPojiVideoToggle();
 });
 
 // 欢迎消息函数
@@ -91,7 +93,7 @@ window.addEventListener('scroll', function() {
     }
 });
 
-// 视频切换功能
+// 辉跃之力视频切换功能
 function initVideoToggle() {
     const videoElement = document.getElementById('huiyueVideo');
     const videoSource = document.getElementById('videoSource');
@@ -125,6 +127,82 @@ function initVideoToggle() {
             toggleButton.innerHTML = '550辉跃之力';
         } else {
             toggleButton.innerHTML = '670辉跃之力';
+        }
+    });
+}
+
+// 暴击之力视频切换功能
+function initBaojiVideoToggle() {
+    const videoElement = document.getElementById('baojiVideo');
+    const videoSource = document.getElementById('baojiSource');
+    const toggleButton = document.getElementById('toggleBaojiVideo');
+    
+    // 检查元素是否存在
+    if (!videoElement || !videoSource || !toggleButton) {
+        return;
+    }
+    
+    // 视频源数组
+    const videoSources = [
+        'pz_photo/暴击之力340.webm',
+        'pz_photo/暴击之力409.webm'
+    ];
+    
+    let currentIndex = 0;
+    
+    toggleButton.addEventListener('click', function() {
+        // 切换到下一个视频源
+        currentIndex = (currentIndex + 1) % videoSources.length;
+        
+        // 更新视频源
+        videoSource.src = videoSources[currentIndex];
+        
+        // 重新加载视频
+        videoElement.load();
+        
+        // 更新按钮文本
+        if (currentIndex === 0) {
+            toggleButton.innerHTML = '409暴击之力';
+        } else {
+            toggleButton.innerHTML = '340暴击之力';
+        }
+    });
+}
+
+// 破击之力视频切换功能
+function initPojiVideoToggle() {
+    const videoElement = document.getElementById('pojiVideo');
+    const videoSource = document.getElementById('pojiSource');
+    const toggleButton = document.getElementById('togglePojiVideo');
+    
+    // 检查元素是否存在
+    if (!videoElement || !videoSource || !toggleButton) {
+        return;
+    }
+    
+    // 视频源数组
+    const videoSources = [
+        'pz_photo/破击之力418.webm',
+        'pz_photo/破击之力2046.webm'
+    ];
+    
+    let currentIndex = 0;
+    
+    toggleButton.addEventListener('click', function() {
+        // 切换到下一个视频源
+        currentIndex = (currentIndex + 1) % videoSources.length;
+        
+        // 更新视频源
+        videoSource.src = videoSources[currentIndex];
+        
+        // 重新加载视频
+        videoElement.load();
+        
+        // 更新按钮文本
+        if (currentIndex === 0) {
+            toggleButton.innerHTML = '2046破击之力';
+        } else {
+            toggleButton.innerHTML = '418破击之力';
         }
     });
 }
