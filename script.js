@@ -13,6 +13,9 @@ window.addEventListener('DOMContentLoaded', function() {
     initVideoToggle();
     initBaojiVideoToggle();
     initPojiVideoToggle();
+    initGedangVideoToggle();
+    initFangbaoVideoToggle();
+    initFangbaoVideoToggle2(); // 新增防爆之力②视频切换功能
 });
 
 // 欢迎消息函数
@@ -203,6 +206,120 @@ function initPojiVideoToggle() {
             toggleButton.innerHTML = '2046破击之力';
         } else {
             toggleButton.innerHTML = '418破击之力';
+        }
+    });
+}
+
+// 格挡之力视频切换功能
+function initGedangVideoToggle() {
+    const videoElement = document.getElementById('gedangVideo');
+    const videoSource = document.getElementById('gedangSource');
+    const toggleButton = document.getElementById('toggleGedangVideo');
+    
+    // 检查元素是否存在
+    if (!videoElement || !videoSource || !toggleButton) {
+        return;
+    }
+    
+    // 视频源数组
+    const videoSources = [
+        'pz_photo/格挡之力432 549.webm',
+        'pz_photo/格挡之力836.webm'
+    ];
+    
+    let currentIndex = 0;
+    
+    toggleButton.addEventListener('click', function() {
+        // 切换到下一个视频源
+        currentIndex = (currentIndex + 1) % videoSources.length;
+        
+        // 更新视频源
+        videoSource.src = videoSources[currentIndex];
+        
+        // 重新加载视频
+        videoElement.load();
+        
+        // 更新按钮文本
+        if (currentIndex === 0) {
+            toggleButton.innerHTML = '836格挡之力';
+        } else {
+            toggleButton.innerHTML = '432 549格挡之力';
+        }
+    });
+}
+
+// 防爆之力视频切换功能
+function initFangbaoVideoToggle() {
+    const videoElement = document.getElementById('fangbaoVideo');
+    const videoSource = document.getElementById('fangbaoSource');
+    const toggleButton = document.getElementById('toggleFangbaoVideo');
+    
+    // 检查元素是否存在
+    if (!videoElement || !videoSource || !toggleButton) {
+        return;
+    }
+    
+    // 视频源数组
+    const videoSources = [
+        'pz_photo/防爆之力52.webm',
+        'pz_photo/防爆之力78.webm'
+    ];
+    
+    let currentIndex = 0;
+    
+    toggleButton.addEventListener('click', function() {
+        // 切换到下一个视频源
+        currentIndex = (currentIndex + 1) % videoSources.length;
+        
+        // 更新视频源
+        videoSource.src = videoSources[currentIndex];
+        
+        // 重新加载视频
+        videoElement.load();
+        
+        // 更新按钮文本
+        if (currentIndex === 0) {
+            toggleButton.innerHTML = '78防爆之力';
+        } else {
+            toggleButton.innerHTML = '52防爆之力';
+        }
+    });
+}
+
+// 防爆之力②视频切换功能
+function initFangbaoVideoToggle2() {
+    const videoElement = document.getElementById('fangbaoVideo2');
+    const videoSource = document.getElementById('fangbaoSource2');
+    const toggleButton = document.getElementById('toggleFangbaoVideo2');
+    
+    // 检查元素是否存在
+    if (!videoElement || !videoSource || !toggleButton) {
+        return;
+    }
+    
+    // 视频源数组
+    const videoSources = [
+        'pz_photo/防爆之力80.webm',
+        'pz_photo/防爆之力80-.webm'
+    ];
+    
+    let currentIndex = 0;
+    
+    toggleButton.addEventListener('click', function() {
+        // 切换到下一个视频源
+        currentIndex = (currentIndex + 1) % videoSources.length;
+        
+        // 更新视频源
+        videoSource.src = videoSources[currentIndex];
+        
+        // 重新加载视频
+        videoElement.load();
+        
+        // 更新按钮文本
+        if (currentIndex === 0) {
+            toggleButton.innerHTML = '80-防爆之力';
+        } else {
+            toggleButton.innerHTML = '80+防爆之力';
         }
     });
 }
